@@ -1,0 +1,134 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+.navbar {
+	padding: .5rem !important;
+}
+.nav-link{
+	padding: .3rem 1rem !important;
+}
+nav.audiencias{
+	background: #990000;
+	font-size: 14px;
+}
+nav.audiencias a{
+	color: #fff;
+}
+nav.productos{
+	font-size: 14px;
+	color: #fff !important;
+}
+nav.productos a{
+	color:#000;
+}
+nav.productos a:hover{
+	color:#990000;
+	text-decoration: none;
+}
+nav.productos .dropdown-menu a{
+	color:#000;
+}
+li.let a:hover{
+	color:#990000;
+}
+/*====animacion borde====*/
+.item {
+  position: relative;
+}
+
+.item:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  position: absolute;
+  bottom: 0;
+  transition: all 0.3s;
+}
+
+.item:hover:before {
+  width: 100%;
+}
+
+.uno:before {
+  left: 0;
+  background: #fff;
+}
+.dos:before {
+  left: 0;
+  background: #990000;
+}
+/*====final animacion borde====*/
+
+.contenidos-x{
+	padding: 30px;
+	margin-top: 20px;
+}
+
+footer {
+  background-color: #333333;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  padding: 40px 0px 32px;
+  font-size: 14px;
+}
+footer ul li{
+	text-decoration: none;
+	list-style: none;
+}
+.oferta-academica{
+	padding: 0px 40px 0px 0px;
+}
+.localizacion-redes{
+	border-left:1px solid #676767;
+	padding: 0px 0px 0px 40px!important;
+	margin-bottom: 40px;
+}
+.derechos-reservados{
+	padding: 40px 0px 0px 0px;
+	border-top:1px solid #676767; 
+}
+
+.enlace_contrasena {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    font-weight: 400;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    text-align: center;
+
+}
+
+.button_rojo {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    font-weight: 400;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+@media all and (min-width: 992px) {
+	.navbar{ padding-top: 0; padding-bottom: 0; }
+	.navbar .has-megamenu{position:static!important;}
+	.navbar .megamenu{left:0; right:0; width:100%; padding:20px;  }
+	.navbar .nav-link{ padding-top:1rem; padding-bottom:1rem;  }
+}

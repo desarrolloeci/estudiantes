@@ -1,0 +1,59 @@
+/*
+ * Nuevo.java
+ *
+ * Created on 9 de septiembre de 2003, 20:37
+ */
+
+package nuevos;
+import java.io.*;
+import java.text.*;
+import java.util.*;
+import javax.servlet.*;
+import javax.servlet.http.* ;
+import estudiantes.baseDatos.BaseDatos ;
+/**
+ *
+ * @author  Julián García
+ * @version 1.0
+ */
+public class Nuevo {
+
+    private String idInsc;
+    private String nom;
+    private String ema;
+    private String tel;
+    private String doc;
+    
+    /** Creates new Nuevo */
+    public Nuevo() {
+    }
+    public Nuevo(HttpServletRequest request) {
+/**
+ *
+ * @author  Julián García
+ * @version 1.0
+ * Función: Crea una instancia de un posible aspirante 
+ * Parametros:  HttpServletRequest request  Datos recibidos de la Página
+ *              String idEst   Identificador generado para el aspirante
+ */
+        nom = new String(request.getParameter("nom")) ;
+        ema = new String(request.getParameter("ema")) ;
+        tel = new String(request.getParameter("tel")) ;
+        doc = new String(request.getParameter("doc")) ;
+    }
+
+    public String inserteBD(BaseDatos bd) {
+        String consulta, sec, mensaje = new String("");
+        
+        sec = bd.sigSecuencia("PAGINSC") ;
+        //== El registro es nuevo se crea en la base de datos
+        consulta = new String("insert into registro.pginscrip values (") ;
+        consulta = consulta + sec + ", '2004-1', '" + nom + "', '" + ema + "', '" + doc + 
+                        "', '" + tel + "', getdate(), 0, null )" ; 
+        if (bd.actualizar(consulta) > 0 ) 
+            mensaje = new String(sec) ;
+        else 
+            mensaje = new String("Error en Inserción " + bd.getMensajeBD() + " " + consulta) ;
+        return mensaje;
+    }      
+}
